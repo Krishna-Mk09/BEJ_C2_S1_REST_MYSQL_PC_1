@@ -10,15 +10,17 @@ package com.niit.dp.BEJ_C2_S1_REST_MYSQL_PC_1.controller;
 
 import com.niit.dp.BEJ_C2_S1_REST_MYSQL_PC_1.service.ProductService;
 import domain.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("/api/vi")
 public class ProductController {
-    private final ProductService productService;
+    private ProductService productService;
 
+    @Autowired
     public ProductController(ProductService productService) {
         this.productService = productService;
     }

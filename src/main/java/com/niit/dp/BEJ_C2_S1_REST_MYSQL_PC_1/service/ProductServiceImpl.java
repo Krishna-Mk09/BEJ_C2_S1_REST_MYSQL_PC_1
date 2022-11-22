@@ -19,7 +19,7 @@ import java.util.Optional;
 @Service
 public class ProductServiceImpl implements ProductService {
     // A constructor injection.
-    private final ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     // A constructor injection.
     @Autowired
