@@ -12,9 +12,7 @@ import java.util.List;
 // It is a Spring Data JPA repository. It is a Spring Data JPA repository. It is a Spring Data JPA repository. It is a
 // Spring Data JPA repository. It is a Spring Data JPA repository. It is a Spring Data JPA repository. It is a Spring Data
 // JPA repository. It is a Spring Data JPA repository. It is a Spring Data JPA repository. It is a Spring Data JPA
-// repository. It is a Spring Data JPA repository. It is a Spring Data JPA repository. It is a Spring Data JPA repository.
-// It is a Spring Data JPA repository. It is a Spring Data JPA repository. It is a Spring Data JPA repository. It is a
-// Spring Data J
+
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
     /**
