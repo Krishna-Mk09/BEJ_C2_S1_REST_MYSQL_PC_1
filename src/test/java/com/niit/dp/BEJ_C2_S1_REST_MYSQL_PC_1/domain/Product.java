@@ -55,4 +55,15 @@ public class Product {
     public void setAmountInStock(double amountInStock) {
         this.amountInStock = amountInStock;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", Name='" + Name + '\'' +
+                ", Description='" + Description + '\'' +
+                ", amountInStock=" + amountInStock +
+                '}';
+    }
+
 }
