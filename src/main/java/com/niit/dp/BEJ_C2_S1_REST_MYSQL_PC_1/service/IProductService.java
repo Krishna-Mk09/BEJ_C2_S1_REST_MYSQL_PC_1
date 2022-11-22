@@ -24,4 +24,8 @@ public interface IProductService {
     Optional<Product> getProductById(int pid);
 
     void updateProduct(int pid, Product product);
+
+    List<Product> fetchDataByName(String productName);
+    
+
 }

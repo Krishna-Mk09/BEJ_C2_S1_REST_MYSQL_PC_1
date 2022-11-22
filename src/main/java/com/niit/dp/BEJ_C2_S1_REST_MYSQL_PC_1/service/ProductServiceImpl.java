@@ -77,4 +77,9 @@ public class ProductServiceImpl implements IProductService {
     public void updateProduct(int pid, Product product) {
         productRepository.save(product);
     }
+
+    @Override
+    public List<Product> fetchDataByName(String productName) {
+        return productRepository.findByProductName(productName);
+    }
 }

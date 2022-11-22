@@ -86,5 +86,8 @@ public class ProductController {
         return new ResponseEntity<>("Product Record Updated", HttpStatus.OK);
     }
 
-
+    @GetMapping("/getProductByName/{productName}")
+    public ResponseEntity<?> getProductByName(@PathVariable String productName) {
+        return new ResponseEntity<>(iproductService.fetchDataByName(productName), HttpStatus.OK);
+    }
 }
