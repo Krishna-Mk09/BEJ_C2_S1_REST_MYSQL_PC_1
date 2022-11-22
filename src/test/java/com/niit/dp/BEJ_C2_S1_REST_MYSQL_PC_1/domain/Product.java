@@ -23,4 +23,5 @@ public class Product {
         Description = description;
         this.amountInStock = amountInStock;
     }
+
 }
