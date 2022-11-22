@@ -79,7 +79,6 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public void updateProduct(int productId, Product product) {
-
         productRepository.save(product);
     }
 }
