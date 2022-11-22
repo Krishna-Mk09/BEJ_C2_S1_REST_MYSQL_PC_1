@@ -17,6 +17,12 @@ import java.util.List;
 // Spring Data J
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
+    /**
+     * Find all products whose name is equal to the given productName.
+     *
+     * @param productName The name of the product to search for.
+     * @return A list of products with the given product name.
+     */
     List<Product> findByProductName(String productName);
 
 
