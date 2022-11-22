@@ -8,49 +8,50 @@
 
 package com.niit.dp.BEJ_C2_S1_REST_MYSQL_PC_1.controller;
 
-import com.niit.dp.BEJ_C2_S1_REST_MYSQL_PC_1.service.ProductService;
-import domain.Product;
+import com.niit.dp.BEJ_C2_S1_REST_MYSQL_PC_1.domain.Product;
+import com.niit.dp.BEJ_C2_S1_REST_MYSQL_PC_1.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/vi")
+@RequestMapping("/api/v1")
+
 public class ProductController {
-    private ProductService productService;
+    private final IProductService iproductService;
 
     @Autowired
-    public ProductController(ProductService productService) {
-        this.productService = productService;
+    public ProductController(IProductService iproductService) {
+        this.iproductService = iproductService;
     }
 
     @PostMapping("/insertProduct")
     public ResponseEntity<?> saveFunction(@RequestBody Product product) {
-        return new ResponseEntity<>(productService.saveProduct(product), HttpStatus.CREATED);
+        return new ResponseEntity<>(iproductService.saveProduct(product), HttpStatus.CREATED);
     }
 
-    @GetMapping("/fetchAllProducts")
+    @GetMapping("/fetchAllProduct")
     public ResponseEntity<?> fetchFunction() {
-        return new ResponseEntity<>(productService.fetchAllProducts(), HttpStatus.OK);
+        return new ResponseEntity<>(iproductService.fetchAllProduct(), HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteById/{productId}")
-    public ResponseEntity<?> deleteFunction(@PathVariable int productId) {
-        productService.deleteProduct(productId);
-        return new ResponseEntity<>("deleted", HttpStatus.CREATED);
+    @DeleteMapping("/deleteProduct/{id}")
+    public ResponseEntity<?> deleteFunction(@PathVariable int id) {
+        iproductService.deleteProduct(id);
+        return new ResponseEntity<>("Product Record Deleted", HttpStatus.OK);
     }
 
-    @GetMapping("/getById/{productId}")
-    public ResponseEntity<?> getByIdFunction(@PathVariable int productId) {
-        productService.fetchProductById(productId);
-        return new ResponseEntity<>(productService.fetchProductById(productId), HttpStatus.OK);
+    @GetMapping("/getProductById/{id}")
+    public ResponseEntity<?> getProductByIdFunction(@PathVariable int id) {
+        return new ResponseEntity<>(iproductService.getProductById(id), HttpStatus.OK);
     }
 
-    @PutMapping("/updateById/{productId}")
-    public ResponseEntity<?> updateByIdFunction(@PathVariable int productId, @RequestBody Product product) {
-        productService.updateProduct(productId, product);
-        return new ResponseEntity<>("product Record Updated", HttpStatus.OK);
+    @PutMapping("/updateById/{id}")
+    public ResponseEntity<?> updateFunction(@PathVariable int id, @RequestBody Product product) {
+        iproductService.updateProduct(id, product);
+        return new ResponseEntity<>("Product Record Updated", HttpStatus.OK);
     }
+
 
 }
