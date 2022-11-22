@@ -24,4 +24,35 @@ public class Product {
         this.amountInStock = amountInStock;
     }
 
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+    public double getAmountInStock() {
+        return amountInStock;
+    }
+
+    public void setAmountInStock(double amountInStock) {
+        this.amountInStock = amountInStock;
+    }
 }
